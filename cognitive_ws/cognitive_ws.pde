@@ -47,8 +47,9 @@ float spin = 0;
 float invLilacDot = 0;
 
 void setup() {
-  size(800, 800, P2D);
+  size(800, 600, P2D);
   frameRate(8);
+  //smooth(32);
 }
 
 void draw() {
@@ -200,7 +201,7 @@ void spiralGradient()
   }
   stroke(180);
   noFill();
-  ellipse(0, 0 , width/2, height/2);
+  ellipse(0, 0 , width/2, width/2);
 }
 
 void lilacChaser()
@@ -216,7 +217,8 @@ void lilacChaser()
     float par = map(i, 0, 12, 0, TWO_PI);
     if (i != invLilacDot)
     {
-      stroke(255, 129, 243);
+      //stroke(255, 129, 243);
+      noStroke();
       fill(255, 129, 243);
       ellipse(cos(par)*dist, sin(par)*dist, 20, 20);
       for(int j=10; j<30; j++)
